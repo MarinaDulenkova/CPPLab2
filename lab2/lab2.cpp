@@ -18,7 +18,8 @@
 #include "stdafx.h"
 
 
-int main(array<System::String ^> ^args)
+int main()
 {
+	system("pause");
     return 0;
 }
