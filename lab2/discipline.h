@@ -11,12 +11,16 @@ private:
 	std::string teacher;	//фамилия преподавателя
 	int group;				//код группы
 	int stud_num;			//количество студентов в группе
-	int lect_hours;			//количество часов лекций
-	int pract_hours;		//количество часов практики
+	double lect_hours;		//количество часов лекций
+	double pract_hours;		//количество часов практики
 	bool term_paper;		//наличие курсовой работы
 	finals_type finals;		//вид итогового контроля (зачет или экзамен)
 	double time_per_student;//зачет — 0.35ч на студента, экзамен — 0.5ч на студента
 public:
-	Discipline(): code(cd), name(nm), teacher(tch), group(gr), stud_num(std_n), lect_hours(l_hr), pract_hours(p_hr) {}
-	~Discipline() {}
+	Discipline();
+	Discipline(int a_code, std::string a_name, std::string a_teacher, int a_group, int a_stud_num, 
+		double a_lect_hours, double a_pract_hours, bool a_term_paper, finals_type a_finals): 
+		code(a_code), name(a_name), teacher(a_teacher), group(a_group), stud_num(a_stud_num), 
+		lect_hours(a_lect_hours), pract_hours(a_pract_hours), term_paper(a_term_paper), finals(a_finals);
+	~Discipline();
 }
