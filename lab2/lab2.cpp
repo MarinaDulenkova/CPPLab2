@@ -16,10 +16,62 @@
 //   ѕоиск по фамилии преподавател€, коду группы, наличию курсовой, виду итогового контрол€. 
 
 #include "stdafx.h"
+#include "console_utils.h"
 
+
+int main_menu(DisContainer cont)
+{
+	int option = -1;
+	while ((option < 0) || (option > 5))
+	{
+		print_menu_main();
+		if (cont.size() == 0) { std::cout << "Warning! Empty container. Some actions are not available." << std::endl; };
+		get_num(0, 5, option);
+	}
+	return option;
+}
+
+void create_menu_actions(int option, DisContainer cont)
+{
+	switch (option) 
+	{
+	    case 1: 
+			{
+				input_action();
+				break;
+			}
+        case 2: 
+			{
+				output_action();
+				break;
+			}
+        case 3: 
+			{
+				search_action();
+				break;
+			}
+        case 4: 
+			{
+				add_action();
+				break;
+			}
+        case 5: 
+			{
+				subset_action();
+				break;
+			}
+		default: break;
+	}
+}
 
 int main()
 {
-	system("pause");
+	setlocale(LC_ALL, "Russian");
+	int option = -1;
+    while (option != 0) 
+	{
+        option = main_menu(cont);
+        create_menu_actions(option, cont);
+    }
     return 0;
 }

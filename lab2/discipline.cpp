@@ -34,3 +34,5 @@ Discipline::Discipline(int a_code, std::string a_name, std::string a_teacher, in
 		}
 	}
 }
+
+Discipline::~Discipline() {}
